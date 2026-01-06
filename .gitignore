@@ -1,0 +1,26 @@
+# Maven
+target/
+*.log
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+*.DS_Store
+
+# Temporary
+tmp/
+*.tmp
+
+# OS
+Thumbs.db
+
+# Portable Maven (Don't commit binaries)
+maven_portable/
+
+# Odoo Local Data (Don't commit the DB volume data if it was mapped locally, though docker-compose usually handles this in volumes)
+odoo-db-data/
+postgres-data/

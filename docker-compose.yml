@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: rental_mongo
+    restart: always
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: request_admin
+      MONGO_INITDB_ROOT_PASSWORD: request_password
+      MONGO_INITDB_DATABASE: rental_db
+    volumes:
+      - mongo_data:/data/db
+
+  # Odoo Service (Prepared for future use)
+  odoo:
+    image: odoo:16
+    container_name: rental_odoo
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo_db_pass
+    volumes:
+      - odoo_data:/var/lib/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf
+
+  db:
+    image: postgres:15
+    container_name: rental_postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo_db_pass
+      - POSTGRES_USER=odoo
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  mongo_data:
+  odoo_data:
+  pg_data:

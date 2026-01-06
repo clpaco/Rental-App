@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainContainer" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rental.controller.MainLayoutController">
+   <left>
+      <VBox prefHeight="700.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Rental App" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Separator opacity="0.1" prefWidth="200.0" />
+            
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDashboard" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="📊  Panel Principal">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+            
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="75.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showEquipos" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="📷  Inventario">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+            
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="117.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showUsuarios" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="👥  Clientes">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="159.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showReservas" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="📅  Reservas">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="201.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showFacturas" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="💰  Facturación">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+            
+            <Separator opacity="0.1" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            
+            <Label text="Soporte" textFill="#95a5a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showGarantias" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="🛡  Garantías">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showMantenimientos" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="🔧  Mantenimiento">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+            
+             <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showLogs" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="📋  Logs &amp; Audit">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Button>
+            
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <!-- Initial Content creates placeholders -->
+   </center>
+</BorderPane>

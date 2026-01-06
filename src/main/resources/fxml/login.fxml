@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rental.controller.LoginController" style="-fx-background-color: #f4f4f4;">
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+   <children>
+      <Label text="Rental App Login">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label text="Conéctate con tus credenciales de Odoo" textFill="#666666" />
+      
+      <VBox maxWidth="300.0" spacing="10.0">
+         <children>
+            <Label text="Usuario (Email)" />
+            <TextField fx:id="txtUser" />
+            
+            <Label text="Contraseña" />
+            <PasswordField fx:id="txtPass" />
+            
+            <Label fx:id="lblStatus" textFill="RED" wrapText="true" />
+            
+            <Button fx:id="btnLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleLogin" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Iniciar Sesión">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</VBox>

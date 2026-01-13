@@ -19,30 +19,54 @@
       <GridPane hgap="10.0" vgap="10.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="600.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="ALWAYS" />
         </rowConstraints>
          <children>
             <Label text="Cliente:" />
             <ComboBox fx:id="comboCliente" prefWidth="300.0" promptText="Seleccionar Cliente" GridPane.columnIndex="1" />
             
             <Label text="Fecha Inicio:" GridPane.rowIndex="1" />
-            <DatePicker fx:id="dateInicio" GridPane.columnIndex="1" />
+            <DatePicker fx:id="dateInicio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             
             <Label text="Fecha Fin:" GridPane.rowIndex="2" />
-            <DatePicker fx:id="dateFin" GridPane.columnIndex="1" />
+            <DatePicker fx:id="dateFin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             
-            <Label text="Equipos Disponibles:" GridPane.rowIndex="3" />
+            <Label text="Selección de Equipos:" GridPane.rowIndex="3" />
             <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleCheckAvailability" text="Verificar Disponibilidad y Listar" />
-                  <ListView fx:id="listEquipos" prefHeight="200.0" prefWidth="200.0" />
-                  <Label style="-fx-font-size: 10px; -fx-text-fill: grey;" text="* Mantén Ctrl para selección múltiple" />
+                  <Button mnemonicParsing="false" onAction="#handleCheckAvailability" style="-fx-background-color: #17a2b8; -fx-text-fill: white;" text="1. Verificar Disponibilidad (Rango de Fechas)" />
+                  
+                  <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Disponibles:" />
+                              <ListView fx:id="listAvailable" VBox.vgrow="ALWAYS" />
+                              <Button mnemonicParsing="false" onAction="#handleVerOcupacion" text="🔍 Ver Ocupación (Seleccionado)" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleAgregar" text="&gt;&gt;" />
+                              <Button fx:id="btnRemove" mnemonicParsing="false" onAction="#handleQuitar" text="&lt;&lt;" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Seleccionados:" />
+                              <ListView fx:id="listSelected" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

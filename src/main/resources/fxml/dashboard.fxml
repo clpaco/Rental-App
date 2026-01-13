@@ -68,7 +68,7 @@
            <children>
                <Label fx:id="statusLabel" text="Sistema Listo - Odoo Conectado (v16)" textFill="#2e7d32" />
                <Button onAction="#refreshDashboard" text="Refrescar Datos" />
-               <Button onAction="#handleSyncOdoo" style="-fx-background-color: #7e57c2; -fx-text-fill: white; -fx-font-weight: bold;" text="🔄 Sincronizar Odoo Maestra" />
+               <Button onAction="#handleSyncOdoo" style="-fx-background-color: #7e57c2; -fx-text-fill: white; -fx-font-weight: bold;" text="🔄 Sincronizar con Odoo" />
            </children>
            <padding>
                <Insets bottom="10.0" top="10.0" />

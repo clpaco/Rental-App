@@ -70,7 +70,23 @@ public class ReservasController {
 
     @FXML
     private void handleNuevaReserva() {
-        showForm();
+        showForm(null);
+    }
+
+    @FXML
+    private void handleEditarReserva() {
+        Reserva selected = reservasTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            showAlert("Seleccione una reserva para editar.", Alert.AlertType.WARNING);
+            return;
+        }
+
+        if (selected.getEstado() == EstadoReserva.CANCELADA) {
+            showAlert("No se pueden editar reservas canceladas.", Alert.AlertType.WARNING);
+            return;
+        }
+
+        showForm(selected);
     }
 
     @FXML
@@ -92,7 +108,7 @@ public class ReservasController {
         }
     }
 
-    private void showForm() {
+    private void showForm(Reserva reservaToEdit) {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/reserva_form.fxml"));
             Stage stage = new Stage();
@@ -103,6 +119,13 @@ public class ReservasController {
 
             ReservaFormController controller = loader.getController();
             controller.setStage(stage);
+
+            if (reservaToEdit != null) {
+                stage.setTitle("Editar Reserva");
+                controller.setReserva(reservaToEdit);
+            } else {
+                stage.setTitle("Nueva Reserva");
+            }
 
             stage.showAndWait();
 

@@ -82,4 +82,5 @@ public class MainLayoutController {
     public void showLogs() {
         setView("logs");
     }
+
 }
